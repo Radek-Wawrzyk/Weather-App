@@ -6,10 +6,11 @@ const apiKey = "11c38b071f2eeb832c531f427ef6b289";
 const city = "Gdynia";
 
 class App extends Component {
-  getWeather = async () => {
+  getWeather = async (e) => {
+    e.preventDefault();
     const apiCall = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}`);
     const data = await apiCall.json();
-    console.log(data);
+    console.log(data.main.temp);
   };
 
   render() {
