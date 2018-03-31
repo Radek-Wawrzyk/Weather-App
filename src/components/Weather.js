@@ -4,11 +4,11 @@ class Weather extends Component {
   render() {
     return (
       <div>
-         <p>City: {this.props.city}</p> 
-        <p>Country: {this.props.country}</p>
-          <p>temperature: {this.props.temperature}</p>
-          <p>description: {this.props.description}</p>
-        <p>{this.props.error}</p>
+        { this.props.city && <p>City: {this.props.city}</p> }
+        { this.props.country &&<p>Country: {this.props.country}</p> }
+        { this.props.temperature &&<p>temperature: {this.props.temperature}</p> }
+        { this.props.description &&<p>description: {this.props.description}</p> }
+        { this.props.error && <p>{this.props.error}</p> }
       </div>
     );
   }
