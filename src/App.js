@@ -32,6 +32,10 @@ class App extends Component {
       })
     } else {
       this.setState({
+        temperature: undefined,
+        city: undefined,
+        country: undefined,
+        description: undefined,
         error: "Enter city!"
       })
     }
