@@ -11,6 +11,7 @@ class App extends Component {
     city: undefined,
     country: undefined,
     description: undefined,
+    wind: undefined,
     error: undefined
   }
 
@@ -21,13 +22,14 @@ class App extends Component {
     const data = await apiCall.json();
 
     if (city) {
-      console.log("In "+city+" city tempeture is "+data.main.temp+"°C");
+      console.log(data);
 
       this.setState({
         temperature: data.main.temp,
         city: data.name,
         country: data.sys.country,
         description: data.weather[0].description,
+        wind: data.wind.speed,
         error: ""
       })
     } else {
@@ -36,6 +38,7 @@ class App extends Component {
         city: undefined,
         country: undefined,
         description: undefined,
+        wind: undefined,
         error: "Enter city!"
       })
     }
@@ -51,6 +54,7 @@ class App extends Component {
           city={this.state.city}
           country={this.state.country}
           description={this.state.description}
+          wind={this.state.wind}
           error={this.state.error}
         ></Weather>
       </div>
