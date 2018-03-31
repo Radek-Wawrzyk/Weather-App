@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from "./components/Header";
 import Form from "./components/Form";
 import Weather from './components/Weather';
+import Footer from './components/Footer';
 
 const apiKey = "11c38b071f2eeb832c531f427ef6b289";
 
@@ -57,6 +58,7 @@ class App extends Component {
           wind={this.state.wind}
           error={this.state.error}
         ></Weather>
+        <Footer></Footer>
       </div>
     );
   }
