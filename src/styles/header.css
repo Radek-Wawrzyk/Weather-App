@@ -1,0 +1,38 @@
+.weather-header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  border-bottom: 1px solid #bdc3c7;
+}
+.weather-header-title {
+  font-size: 32px;
+  color: #3498db;
+}
+.weather-header-title span {
+  font-weight: bold;
+  color: #2980b9;
+}
+.weather-header-language {
+  display: flex;
+  align-items: center;
+  color: #2980b9;
+  font-weight: bold;
+}
+.weather-header-language-select {
+  border: 1px solid #3498db;
+  color: #3498db;
+  margin: 0 0 0 10px
+}
+
+@media screen and (max-width: 768px) {
+  .weather-header {
+    height: 50px;
+    justify-content: center;
+  }
+  .weather-header-title {
+    font-size: 24px;
+  }
+}
