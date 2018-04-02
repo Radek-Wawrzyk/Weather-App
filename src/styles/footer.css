@@ -4,11 +4,11 @@
   border-top: 1px solid #bdc3c7;
 }
 .footer-author {
-  color: #3498db;
+  color: #ef5447;
   font-size: 16px;
 }
 .footer-author a {
-  color: #2980b9;
+  color: #e74c3c;
   font-weight: bold;
   text-decoration: none;
   padding: 2px;
@@ -17,8 +17,9 @@
   margin: 10px 0 0 0;
 }
 .footer-socials a {
-  color: #3498db;
+  color: #e74c3c;
   font-size: 20px;
   margin: 0 1px;
   padding: 0 2px;
+  outline-color: #e74c3c;
 }

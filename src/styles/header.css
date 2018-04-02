@@ -9,22 +9,22 @@
 }
 .weather-header-title {
   font-size: 32px;
-  color: #3498db;
+  color: #ef5447
 }
 .weather-header-title span {
   font-weight: bold;
-  color: #2980b9;
+  color: #e74c3c;
 }
 .weather-header-language {
   display: flex;
   align-items: center;
-  color: #2980b9;
+  color: #ef5447;
   font-weight: bold;
 }
 .weather-header-language-select {
-  border: 1px solid #3498db;
-  color: #3498db;
-  margin: 0 0 0 10px
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  margin: 0 0 0 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -34,5 +34,8 @@
   }
   .weather-header-title {
     font-size: 24px;
+  }
+  .weather-header-language p {
+    display: none;
   }
 }
