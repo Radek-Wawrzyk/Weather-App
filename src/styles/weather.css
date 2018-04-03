@@ -1,0 +1,36 @@
+.weather {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 10;
+  position: relative;
+}
+.weather-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.3%;
+  height: 250px;
+  border: 2px solid transparent;
+  transition: border 0.5s;
+}
+.weather-tile-error {
+  border: none;
+  transition: none;
+  height: auto;
+  margin: -50px 0 0 0;
+}
+.weather-tile p {
+  color: #e74c3c;
+  font-size: 18px;
+  font-weight: 600;
+}
+.weather-tile p span {
+  color: white;
+}
+.weather-tile p .error {
+  color: #c63b2d;
+}
+.weather-tile:hover {
+  border-color: #e74c3c;
+}

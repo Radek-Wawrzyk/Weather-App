@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Form from "./components/Form";
 import Weather from './components/Weather';
 import Footer from './components/Footer';
+import "./styles/app.css";
 
 const apiKey = "11c38b071f2eeb832c531f427ef6b289";
 
@@ -11,8 +12,10 @@ class App extends Component {
     temperature: undefined,
     city: undefined,
     country: undefined,
+    mainTypeOfWeather: "",
     description: undefined,
     wind: undefined,
+    humidity: undefined,
     error: undefined
   }
 
@@ -24,13 +27,14 @@ class App extends Component {
 
     if (city) {
       console.log(data);
-
       this.setState({
         temperature: data.main.temp,
         city: data.name,
         country: data.sys.country,
+        mainTypeOfWeather: data.weather[0].main,
         description: data.weather[0].description,
         wind: data.wind.speed,
+        humidity: data.main.humidity,
         error: ""
       })
     } else {
@@ -40,24 +44,30 @@ class App extends Component {
         country: undefined,
         description: undefined,
         wind: undefined,
+        humidity: undefined,
         error: "Enter city!"
       })
     }
   };
-
+  
   render() {
     return (
-      <div>
+      <div className="weather-apliaction">
         <Header></Header>
-        <Form getWeather={this.getWeather}></Form>
-        <Weather
-          temperature={this.state.temperature}
-          city={this.state.city}
-          country={this.state.country}
-          description={this.state.description}
-          wind={this.state.wind}
-          error={this.state.error}
-        ></Weather>
+        <main className="weather-info-wrapper" style={{backgroundImage: `url(..//img/${this.state.mainTypeOfWeather}.jpg)`}}>
+          <section className="weather-info-content">
+            <Form getWeather={this.getWeather}></Form>
+            <Weather
+              temperature={this.state.temperature}
+              city={this.state.city}
+              country={this.state.country}
+              description={this.state.description}
+              wind={this.state.wind}
+              error={this.state.error}
+              humidity={this.state.humidity}
+            ></Weather>
+          </section>
+        </main>
         <Footer></Footer>
       </div>
     );
