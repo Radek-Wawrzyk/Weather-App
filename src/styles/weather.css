@@ -1,34 +1,50 @@
 .weather {
+  z-index: 10;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  z-index: 10;
-  position: relative;
 }
 .weather-tile {
   text-align: center;
-  width: 33.3%;
+  width: 100%;
   height: auto;
-  padding: 50px;
-  transition: border 0.5s;
-}
-.weather-tile:hover {
-  border-color: white;
+  color: white;
+  padding: 0 0 10px 0;
 }
 .weather-tile-error {
   border: none;
   transition: none;
   height: auto;
-  margin: -50px 0 0 0;
+  margin: -30px 0 0 0;
 }
-.weather-tile p {
+.weather-tile-error .error {
+  color: #c63b2d;
+}
+.weather-location {
+  font-size: 28px;
+}
+.weather-temperature {
+  font-size: 76px;
+}
+.weather-tile-properties {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 600px;
+  width: 100%;
+}
+.weather-property {
+  padding: 5px 20px;
+  font-size: 14px;
   color: #e74c3c;
-  font-size: 18px;
-  font-weight: 600;
 }
-.weather-tile p span {
+.weather-property span {
   color: white;
 }
-.weather-tile p .error {
-  color: #c63b2d;
+
+@media screen and (max-width: 480px) {
+  .weather-property {
+    padding: 5px 8px;
+  }
 }

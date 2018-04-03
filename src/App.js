@@ -16,6 +16,9 @@ class App extends Component {
     description: undefined,
     wind: undefined,
     humidity: undefined,
+    pressure: undefined,
+    visibility: undefined,
+    cloudy: undefined,
     error: undefined
   }
 
@@ -35,6 +38,9 @@ class App extends Component {
         description: data.weather[0].description,
         wind: data.wind.speed,
         humidity: data.main.humidity,
+        pressure: data.main.pressure,
+        visibility: data.visibility,
+        cloudy: data.clouds.all,
         error: ""
       })
     } else {
@@ -45,6 +51,9 @@ class App extends Component {
         description: undefined,
         wind: undefined,
         humidity: undefined,
+        pressure: undefined,
+        visibility: undefined,
+        cloudy: undefined,
         error: "Enter city!"
       })
     }
@@ -65,6 +74,10 @@ class App extends Component {
               wind={this.state.wind}
               error={this.state.error}
               humidity={this.state.humidity}
+              pressure={this.state.pressure}
+              visibility={this.state.visibility}
+              cloudy={this.state.cloudy}
+              mainTypeOfWeather={this.state.mainTypeOfWeather}
             ></Weather>
           </section>
         </main>

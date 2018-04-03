@@ -1,7 +1,7 @@
 .weather-form {
   display: flex;
   justify-content: center;
-  margin: 20px 0 60px 0;
+  margin: 20px 0 40px 0;
 }
 .weather-form-input {
   padding: 8px 12px 0 12px;
