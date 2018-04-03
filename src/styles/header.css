@@ -6,10 +6,11 @@
   justify-content: space-between;
   padding: 0 15px;
   border-bottom: 1px solid #bdc3c7;
+  font-family: 'Roboto', sans-serif 
 }
 .weather-header-title {
   font-size: 32px;
-  color: #ef5447
+  color: #ef5447;
 }
 .weather-header-title span {
   font-weight: bold;

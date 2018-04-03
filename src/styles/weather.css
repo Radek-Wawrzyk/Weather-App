@@ -6,13 +6,14 @@
   position: relative;
 }
 .weather-tile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   width: 33.3%;
-  height: 250px;
-  border: 2px solid transparent;
+  height: auto;
+  padding: 50px;
   transition: border 0.5s;
+}
+.weather-tile:hover {
+  border-color: white;
 }
 .weather-tile-error {
   border: none;
@@ -30,7 +31,4 @@
 }
 .weather-tile p .error {
   color: #c63b2d;
-}
-.weather-tile:hover {
-  border-color: #e74c3c;
 }
