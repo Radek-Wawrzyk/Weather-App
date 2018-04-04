@@ -17,12 +17,12 @@ class Weather extends Component {
             <h4>{this.props.mainTypeOfWeather}</h4> 
           </div>
           <div className="weather-tile weather-tile-properties">
-            <p className="weather-property">Feels like <span>{this.props.description}</span></p>
-            <p className="weather-property">Wind speed <span>{this.props.wind} Mph</span></p> 
-            <p className="weather-property">Humidity  <span>{this.props.humidity}%</span></p>
-            <p className="weather-property">Pressure <span>{this.props.pressure} hPa</span></p>
-            <p className="weather-property">Visibility  <span>{this.props.visibility}</span></p>
-            <p className="weather-property">Cloudy  <span>{this.props.cloudy }%</span></p>
+            <p className="weather-property">{this.props.language.weather.description}  <span>{this.props.description}</span></p>
+            <p className="weather-property">{this.props.language.weather.windSpeed}  <span>{this.props.wind} Mph</span></p> 
+            <p className="weather-property">{this.props.language.weather.humidity}  <span>{this.props.humidity}%</span></p>
+            <p className="weather-property">{this.props.language.weather.pressure}  <span>{this.props.pressure} hPa</span></p>
+            <p className="weather-property">{this.props.language.weather.visibility}  <span>{this.props.visibility}</span></p>
+            <p className="weather-property">{this.props.language.weather.cloudy}  <span>{this.props.cloudy }%</span></p>
           </div>
         </section> 
       )

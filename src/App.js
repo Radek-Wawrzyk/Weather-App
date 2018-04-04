@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Form from "./components/Form";
 import Weather from './components/Weather';
 import Footer from './components/Footer';
+import Data from "./languages/Data";
 import "./styles/app.css";
 
 const apiKey = "11c38b071f2eeb832c531f427ef6b289";
@@ -20,17 +21,18 @@ class App extends Component {
     visibility: undefined,
     cloudy: undefined,
     error: undefined,
-    language: "en"
+    language: "en",
+    languageData: Data[1]
   }
 
   getWeather = async (e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
-    const apiCall = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=metric`);
+    let language = this.state.language;
+    const apiCall = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&lang=${language}&units=metric`);
     const data = await apiCall.json();
-
+    console.log(this.state.languageData);
     if (city) {
-      console.log(data);
       this.setState({
         temperature: data.main.temp,
         city: data.name,
@@ -62,19 +64,20 @@ class App extends Component {
   
   setLanguage = (e) => {
     this.setState({language: e.target.value});
+    if (this.state.language === "pl") {
+      this.setState({languageData: Data[0]})
+    } else {
+      this.setState({languageData: Data[1]})
+    }
   };
-
-  elo = () => {
-    alert("currect language is "+this.state.language);
-  }
 
   render() {
     return (
       <div className="weather-apliaction">
-        <Header language={this.state.language} setLanguage={this.setLanguage} elo={this.elo} ></Header>
+        <Header languageVersion={this.state.language} setLanguage={this.setLanguage} language={this.state.languageData} ></Header>
         <main className="weather-info-wrapper" style={{backgroundImage: `url(..//img/${this.state.mainTypeOfWeather}.jpg)`}}>
           <section className="weather-info-content">
-            <Form getWeather={this.getWeather}></Form>
+            <Form getWeather={this.getWeather} language={this.state.languageData}></Form>
             <Weather
               temperature={this.state.temperature}
               city={this.state.city}
@@ -87,10 +90,11 @@ class App extends Component {
               visibility={this.state.visibility}
               cloudy={this.state.cloudy}
               mainTypeOfWeather={this.state.mainTypeOfWeather}
+              language={this.state.languageData}
             ></Weather>
           </section>
         </main>
-        <Footer></Footer>
+        <Footer language={this.state.languageData}></Footer>
       </div>
     );
   }

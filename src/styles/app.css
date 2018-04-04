@@ -30,9 +30,9 @@
   height: 100%;
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1440px) {
   .weather-info-wrapper {
-    min-height: 500px;
+    min-height: 600px;
   }
   .weather-info-content {
     padding: 50px 15px;

@@ -7,8 +7,8 @@ class Header extends Component {
       <header className="weather-header">
         <h1 className="weather-header-title">Weather<span>App</span></h1>
         <div className="weather-header-language">
-          <p>Select language</p>
-          <select className="weather-header-language-select" value={this.props.language} onChange={this.props.setLanguage} onMouseEnter={this.props.elo} name="select">
+          <p>{this.props.language.header}</p>
+          <select className="weather-header-language-select" value={this.props.languageVersion} onChange={this.props.setLanguage} onMouseEnter={this.props.elo} name="select">
             <option value="pl">Pl</option>
             <option value="en">En</option>
           </select>
