@@ -5,7 +5,7 @@
 .weather-info-wrapper {
   width: 100%;
   height: auto;
-  min-height: 500px;
+  min-height: 800px;
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -30,6 +30,19 @@
   height: 100%;
 }
 
+@media screen and (max-width: 1366px) {
+  .weather-info-wrapper {
+    min-height: 500px;
+  }
+  .weather-info-content {
+    padding: 50px 15px;
+  }
+}
 @media screen and (max-width: 768px) {
-  
+  .weather-info-wrapper {
+    min-height: auto;
+  }
+  .weather-info-content {
+    padding: 50px 15px;
+  }
 }
