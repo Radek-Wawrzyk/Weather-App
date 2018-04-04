@@ -19,7 +19,8 @@ class App extends Component {
     pressure: undefined,
     visibility: undefined,
     cloudy: undefined,
-    error: undefined
+    error: undefined,
+    language: "en"
   }
 
   getWeather = async (e) => {
@@ -59,10 +60,18 @@ class App extends Component {
     }
   };
   
+  setLanguage = (e) => {
+    this.setState({language: e.target.value});
+  };
+
+  elo = () => {
+    alert("currect language is "+this.state.language);
+  }
+
   render() {
     return (
       <div className="weather-apliaction">
-        <Header></Header>
+        <Header language={this.state.language} setLanguage={this.setLanguage} elo={this.elo} ></Header>
         <main className="weather-info-wrapper" style={{backgroundImage: `url(..//img/${this.state.mainTypeOfWeather}.jpg)`}}>
           <section className="weather-info-content">
             <Form getWeather={this.getWeather}></Form>
