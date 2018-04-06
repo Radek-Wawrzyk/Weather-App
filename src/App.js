@@ -64,7 +64,7 @@ class App extends Component {
   
   setLanguage = (e) => {
     this.setState({language: e.target.value});
-    if (this.state.language === "pl") {
+    if (this.state.language === "en") {
       this.setState({languageData: Data[0]})
     } else {
       this.setState({languageData: Data[1]})
